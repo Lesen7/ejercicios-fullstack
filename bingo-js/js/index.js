@@ -80,6 +80,7 @@ function shuffleNumbers()
 
 shuffleNumbers();
 
+// Hacer focus en el elemento del botón.
 focusElem = function getFocus() {
   document.querySelector("#roll").focus();
 }
