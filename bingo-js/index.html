@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bingo</title>
+
+
+
+      <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+  <div id="main">
+
+  <div class="screen" id="player">
+    <h2>Jugador</h2>
+    <div id="playerSlotsContainer">
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="screen" id="number">
+      <h2>Número</h2>
+      <div id="numberVisual">
+
+      </div>
+    </div>
+    <button id="roll" onClick="showNumber();focusElem();">
+      <span>Sacar Número</span>
+    </button>
+  </div>
+
+  <div class="screen" id="cpu">
+    <h2>CPU</h2>
+    <div id="cpuSlotsContainer">
+    </div>
+  </div>
+
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js'></script>
+
+
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

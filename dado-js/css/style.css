@@ -1,0 +1,48 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+}
+
+#dice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border: 5px solid black;
+  border-radius: 5px;
+  width: 100px;
+  height: 100px;
+}
+
+#diceImg {
+  width: 60%;
+  height: 60%;
+}
+
+.roll {
+  margin: auto;
+}
+
+#history {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 5px solid black;
+  border-radius: 5px;
+  margin: auto;
+  width: 200px;
+  height: 414px;
+}
+
+.logItem1 {
+  background-color: lightgrey;
+  text-align: center;
+  width: 100%;
+}
+
+.logItem2 {
+  background-color: grey;
+  text-align: center;
+  width: 100%;
+}
