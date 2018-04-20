@@ -1,3 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
+
+body {
+  background-color: black;
+  color: #00e810;
+}
+
 .screen {
   display: flex;
   flex-direction: column;
@@ -12,6 +19,8 @@
   border-radius: 5px;
   width: 100px;
   height: 100px;
+  border: 2px solid #00e810;
+  border-radius: 5px;
 }
 
 #diceImg {
@@ -21,6 +30,28 @@
 
 .roll {
   margin: auto;
+  width: 10%;
+  height: 10%;
+  margin-bottom: 1%;
+  background-color: black;
+  color: #00e810;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 150%;
+  border: 2px solid #00e810;
+  border-radius: 5px;
+  box-shadow: 0 6px #00e810;
+}
+
+.roll:focus {
+  outline: 1px dotted #00e810;
+  border-radius: 2px;
+}
+
+.roll:active {
+  font-size: 140%;
+  outline: 0;
+  border-radius: 2px;
+  box-shadow: 0 4px #00e810;
 }
 
 #history {
@@ -33,16 +64,20 @@
   margin: auto;
   width: 200px;
   height: 414px;
+  border: 2px solid #00e810;
+  border-radius: 5px;
 }
 
 .logItem1 {
-  background-color: lightgrey;
+  color: #00e810;
+  font-family: 'Share Tech Mono', monospace;
   text-align: center;
   width: 100%;
 }
 
 .logItem2 {
-  background-color: grey;
+  color: #00e810;
+  font-family: 'Share Tech Mono', monospace;
   text-align: center;
   width: 100%;
 }

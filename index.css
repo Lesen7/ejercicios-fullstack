@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+  color: #00e810;
+  background-color: black;
+}
+
+#main {
+  margin: auto;
+  width: 500px;
+  height: 900px;
+  border: 2px solid #00e810;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#mainHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5%;
+}
+
+#content {
+  width: 100%;
+  height: 60%;
+  border: 2px solid #00e810;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+button.redirect {
+  width: 90%;
+  height: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: black;
+  color: #00e810;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 150%;
+  border: 2px solid #00e810;
+  border-radius: 5px;
+  box-shadow: 0 6px #00e810;
+}
+
+button.redirect:focus {
+  outline: 1px dotted #00e810;
+  border-radius: 2px;
+}
+
+button.redirect:active {
+  font-size: 140%;
+  outline: 0;
+  border-radius: 2px;
+  box-shadow: 0 4px #00e810;
+}
