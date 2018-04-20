@@ -1,10 +1,10 @@
 // Clase equipo.
-class Equipo
+class Team
 {
   constructor(nm, lg = 'img/', nt, gl = 0, pt = 0, ws = 0, ls = 0)
   {
     this.name = nm;
-    this.logo = lg + nm + '.png';
+    this.logo = 'img/' + nm + '.png';
     this.nation = nt;
     this.goals = gl;
     this.points = pt;
@@ -65,8 +65,7 @@ var dom =
   controlArea: document.querySelector('#controlArea')
 }
 
-var numero = 5;
-
-var equipos =
+var teams =
 [
+  new Team('Inter Milan', 'intermilan');
 ];
