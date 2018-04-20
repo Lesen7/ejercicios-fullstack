@@ -145,6 +145,16 @@ function playMatch (playingTeams)
   var teamA_goals = randA + teamA_chance;
   var teamB_goals = randB + teamB_chance;
 
+  // Controlar que no haya goles negativos.
+  if (teamA_goals < 0)
+  {
+    teamA_goals = 0;
+  }
+  if (teamB_goals < 0)
+  {
+    teamB_goals = 0;
+  }
+
   // Sumar goles al 'historial' de cada equipo.
   teamA.goals += teamA_goals;
   teamB.goals += teamB_goals;
