@@ -100,29 +100,35 @@ var teams =
 ];
 console.log(teams);
 
-// Elige dos equipos de la lista.
+// Elige dos equipos distintos de la lista.
 function pickTeams (list)
 {
   var indexA = Math.floor(Math.random() * list.length);
   var indexB = Math.floor(Math.random() * list.length);
+  while (indexA == indexB)
+  {
+    indexB = Math.floor(Math.random() * list.length);
+  }
+
   var teamA = list[indexA];
   var teamB = list[indexB];
   var teams = [teamA, teamB];
-  console.log(teams);
-  console.log(teams[0].name, teams[1].name);
   return teams;
 }
 
-// Play match with chances.
+// Jugar partido con probabilidades.
 function playMatch (playingTeams)
 {
   var randA;
   var randB;
   var teamA = playingTeams[0];
   var teamB = playingTeams[1];
-  var teamA_chance = Math.floor(teamA.wins + teamA.goals - teamA.losses);
-  var teamB_chance = Math.floor(teamB.wins + teamB.goals - teamB.losses);
 
+  // Calcular probabilidades de cada equipo en base a su historial.
+  var teamA_chance = Math.floor((teamA.wins + teamA.goals - teamA.losses) / 10);
+  var teamB_chance = Math.floor((teamB.wins + teamB.goals - teamB.losses) / 10);
+
+  // Calcular rango de goles en base a la discrepancia de habilidad.
   var skillDisc = Math.abs(teamA_chance - teamB_chance);
   if (skillDisc > 2)
   {
@@ -135,19 +141,31 @@ function playMatch (playingTeams)
     randB = Math.floor(Math.random() * 3);
   }
 
+  // Calcular goles de cada equipo.
   var teamA_goals = randA + teamA_chance;
   var teamB_goals = randB + teamB_chance;
 
+  // Sumar goles al 'historial' de cada equipo.
+  teamA.goals += teamA_goals;
+  teamB.goals += teamB_goals;
+
+  // Objeto de resultados.
   var result = {teamA: teamA.name, teamB: teamB.name, winner: teamA.name, teamAGoals: teamA_goals, teamBGoals: teamB_goals};
 
+
+  // Asignar resultados y añadir victorias/derrotas al 'historial' de cada equipo.
   if (teamA_goals > teamB_goals)
   {
+    teamA.wins += 1;
+    teamB.losses += 1;
     result.winner = teamA.name;
     result.teamAGoals = teamA_goals;
     result.teamBGoals = teamB_goals;
   }
   else if (teamA_goals < teamB_goals)
   {
+    teamB.wins += 1;
+    teamB.losses += 1;
     result.winner = teamB.name;
     result.teamAGoals = teamA_goals;
     result.teamBGoals = teamB_goals;
@@ -156,7 +174,8 @@ function playMatch (playingTeams)
   {
     result.winner = 'Empate';
   }
+  console.log(result);
+  console.log(teamA.name + '| victorias: ' + teamA.wins + ' derrotas: ' + teamA.losses);
+  console.log(teamB.name + '| victorias: ' + teamB.wins + ' derrotas: ' + teamB.losses);
   return result;
 }
-
-console.log(playMatch(pickTeams(teams)));
